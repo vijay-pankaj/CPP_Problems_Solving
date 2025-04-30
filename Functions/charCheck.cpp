@@ -6,7 +6,7 @@ string UppercaseOrNot(char ch){
     if(ch>='A'&&ch<='Z'){
         return "upperCase letter";
     }
-    return "npt-Upper case";
+    return "not-Upper case or invalid";
 }
 
 int main(){

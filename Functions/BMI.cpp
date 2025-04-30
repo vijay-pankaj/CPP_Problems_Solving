@@ -2,26 +2,36 @@
 // category (Underweight, Normal weight, Overweight, Obese) using if-else statements.
 
 // if your height is in foot then covert it in meter and enter;
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-string bmiCheck(float height ,float weight,float bmi){
-    bmi=weight/(height*height);
-   string result =(bmi<18.5)?"You are Underweight":
-   (bmi>=18.5&&bmi<24.9)?"You have Normal weight":
-   (bmi>=25&&bmi<29.9)?"You are Overweight":
-   "You are Obese.";
-return result;
-}
-int main(){
-    float height,weight,bmi;
 
-    cout<<"enter your height and weight: ";
-    cin>>weight>>height;
+string bmiCheck(float height, float weight) {
+    float bmi = weight / (height * height);
 
-    if(height<=0 ||weight<=0){
-        cout<<"enter valid height or weight";
+    if (bmi < 18.5) {
+        return "You are Underweight";
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        return "You have Normal weight";
+    } else if (bmi >= 25 && bmi <= 29.9) {
+        return "You are Overweight";
+    } else {
+        return "You are Obese.";
     }
-    string FinalReport= bmiCheck(height,weight,bmi);
-    cout<<FinalReport;
-    
+}
+
+int main() {
+    float height, weight;
+
+    cout << "Enter your height in meters and weight in kg: ";
+    cin >> height >> weight;
+
+    if (height <= 0 || weight <= 0) {
+        cout << "Enter valid height or weight.";
+        return 1;
+    }
+
+    string finalReport = bmiCheck(height, weight);
+    cout << finalReport << endl;
+
+    return 0;
 }

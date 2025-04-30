@@ -1,3 +1,4 @@
+// Write a C++ function that takes a month as an argument and returns whether it has 30 days, 31 days, or 28/29 days using if-else statements.
 #include<bits/stdc++.h>
 using namespace std;
 int CheckMonthDay(int n){
