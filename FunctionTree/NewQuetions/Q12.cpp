@@ -1,83 +1,50 @@
-// User se 5 input lena hai agar unka sum 50 se zyada hota hai to ek function call karna hai jo 1-50 ka sum print karega.
-//  Agar sum 50 se kam hota hai to ek function call karna hai jo 1 character input lekar check karega ki wo consonant hai ya nahi.
-//  Agar sum 50 hota hai to check karna hai ki sum even hai ya odd
+// User se 3 input lena hai agar maximum value 'a' hoti hai to ek function call karna hai jo current date print karega.
+// Agar maximum value 'b' hoti hai to ek function call karna hai jo system time print karega.
+// Agar maximum value 'c' hoti hai to ek function call karna hai jo "Goodbye, World!" print karega.
+
 #include <bits/stdc++.h>
 using namespace std;
 
-string isEvenOrOdd(int sum)
+void print()
 {
-    if (sum % 2 == 0)
-    {
-        return "Even";
-    }
-    else
-    {
-        return "Odd";
-    }
+    cout << "Goodbye,World!";
 }
-string isConsonent(char ch)
+
+void currentTime()
 {
-    if (ch >= 'a' && ch <= 'z')
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    cout << ltm->tm_hour << ":" << ltm->tm_min;
+}
+
+void currentDate()
+{
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    cout << "current date " << ltm->tm_mday;
+}
+
+void maximum(int a, int b, int c)
+{
+    int maxVal = max(a, max(b, c));
+    if (maxVal == a)
     {
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-        {
-            return "Not Conssonent";
-        }
-        else
-        {
-            return "Consonent";
-        }
+        currentDate();
     }
-    else if (ch >= 'A' && ch <= 'Z')
+    else if (maxVal == b)
     {
-        if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
-        {
-            return "Not Conssonent";
-        }
-        else
-        {
-            return "Consonent";
-        }
+        currentTime();
     }
     else
     {
-        return "Enter valid char";
+        print();
     }
 }
 
-int printSum()
-{
-    int sum = 0;
-    for (int i = 1; i <= 50; i++)
-    {
-        sum += i;
-    }
-    return sum;
-}
-
-void isSum(int n1, int n2, int n3, int n4, int n5)
-{
-    int sum = n1 + n2 + n3 + n4;
-    if (sum > 50)
-    {
-        cout << "Sum of 1 to 50 is: " << printSum();
-    }
-    else if (sum < 50)
-    {
-        char ch;
-        cout << "enter a character: ";
-        cin >> ch;
-        cout << "Given character is: " << isConsonent(ch);
-    }
-    else
-    {
-        cout << "Sum of number is: " << isEvenOrOdd(sum);
-    }
-}
 int main()
 {
-    int n1, n2, n3, n4, n5;
-    cout << "Enter five numbers: ";
-    cin >> n1 >> n2 >> n3 >> n4 >> n5;
-    isSum(n1, n2, n3, n4, n5);
+    int n1, n2, n3;
+    cout << "Enter three numbers: ";
+    cin >> n1 >> n2 >> n3;
+    maximum(n1, n2, n3);
 }

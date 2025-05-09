@@ -11,7 +11,7 @@ string AsciiValueCategory(char ch){
     }else if(ch>='a'&&ch<='z'){
         return "LowerCase Letter";
     }else{
-        return "Specia Character";
+        return "Special Character";
     }
 }
 int main(){

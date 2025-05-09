@@ -1,50 +1,40 @@
-// User se 3 input lena hai agar maximum value 'a' hoti hai to ek function call karna hai jo current date print karega.
-// Agar maximum value 'b' hoti hai to ek function call karna hai jo system time print karega.
-// Agar maximum value 'c' hoti hai to ek function call karna hai jo "Goodbye, World!" print karega.
-
+// User se 3 input lena hai aur agar average 50 se zyada hota hai to ek function call karna hai jo 20-30 print karega.
+//  Agar average 50 se kam hota hai to dusra function call karna hai jo 1-20 print karega.
 #include <bits/stdc++.h>
 using namespace std;
+void print2()
+{
+    for (int i = 1; i <= 20; i++)
+    {
+        cout << i << " ";
+    }
+}
 
 void print()
 {
-    cout << "Goodbye,World!";
-}
-
-void currentTime()
-{
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-    cout << ltm->tm_hour << ":" << ltm->tm_min;
-}
-
-void currentDate()
-{
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-    cout << "current date " << ltm->tm_mday;
-}
-
-void maximum(int a, int b, int c)
-{
-    int maxVal = max(a, max(b, c));
-    if (maxVal == a)
+    for (int i = 20; i <= 30; i++)
     {
-        currentDate();
+        cout << i << " ";
     }
-    else if (maxVal == b)
+}
+
+void averageOfNum(int n1, int n2, int n3)
+{
+    int average = (n1 + n2 + n3) / 3;
+    if (average >= 50)
     {
-        currentTime();
+        print();
     }
     else
     {
-        print();
+        print2();
     }
 }
 
 int main()
 {
     int n1, n2, n3;
-    cout << "Enter three numbers: ";
+    cout << "enter three number: ";
     cin >> n1 >> n2 >> n3;
-    maximum(n1, n2, n3);
+    averageOfNum(n1, n2, n3);
 }
