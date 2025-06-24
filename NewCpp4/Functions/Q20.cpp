@@ -1,0 +1,33 @@
+/*
+5. Multiplication Table: Write a function that prints the multiplication table of a number up to 10.
+Input: 3
+Output: 3 x 1 = 3
+    3 x 2 = 6
+    3 x 3 = 9
+    3 x 4 = 12
+    3 x 5 = 15
+    3 x 6 = 18
+    3 x 7 = 21
+    3 x 8 = 24
+    3 x 9 = 27
+    3 x 10 = 30
+
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void tableOfnum(int n)
+{
+    for(int i=1; i<=10; i++){
+        cout<<n<<"X"<<i<<"="<<n*i<<endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "Enter number: ";
+    cin >> n;
+    tableOfnum(n);
+}
