@@ -5,22 +5,20 @@ Output: GCD: 12
 */
 #include<bits/stdc++.h>
 using namespace std;
-int greatestcommondivisor(int a,int b)
-{
-    int c;
-    while(b%a)
-    {
-        c = b%a;
-        a = b;
-        b = c;
+
+int greatestCommonDivisor(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-   return a;
+    return a;
 }
 int main()
 {
     int a,b;
     cout<<"Enter the value of a and b\n";
     cin>>a>>b;
-   int ans =  greatestcommondivisor(a,b);
+   int ans =  greatestCommonDivisor(a,b);
    cout<<ans;
 }
