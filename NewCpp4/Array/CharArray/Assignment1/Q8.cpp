@@ -11,6 +11,20 @@ Output:
 */
 #include<iostream>
 using namespace std;
+
+bool isBothsame(string str1,string str2){
+    if(str1.size()!=str2.size())return false;
+    int i=0;
+    while(i<str1.size()){
+        if(str1[i]==str2[i])i++;
+        else return false;
+    }
+    return true;
+}
+
 int main(){
-    char str1[]={'h','e','l','l','o'};
+    string str1="hello";
+    string str2="hello";
+    if(isBothsame(str1,str2))cout<<"Yes";
+    else cout<<"No";
 }

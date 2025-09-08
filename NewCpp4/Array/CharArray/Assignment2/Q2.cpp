@@ -9,8 +9,3 @@ Output:
 -> Character counts: h=1, e=1, l=3, o=2, w=1, r=1, d=1  
 */
 
-#include<iostream>
-using namespace std;
-int main(){
-    
-}

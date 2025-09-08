@@ -1,34 +1,31 @@
-/*8. Count Words in a String
--> Problem Statement: Count the number of words in a char array (string).
+/*
+3. Split a String into Words
+-> Problem Statement: Split a string into words and store them in an array of char arrays.
 Explanation:
--> Split the string by spaces and count the number of words.
+-> Use a loop to find spaces, split the string, and store words.
 Input:
 -> char str[] = "hello world from c++";  
 Output:
--> Word Count: 4*/
+-> Words: hello, world, from, c++ 
+*/
 #include<iostream>
 using namespace std;
-
-int countwords(string str){
-      string str2="";
-      int count=0;
+void stringsplitIntoWord(string str){
+    string str2="";
     for(int i=0; i<str.size();i++){
         if(str[i]!=' ')str2+=str[i];
         else{
             cout<<str2<<" ";
             str2="";
-            count++;
         }
     }
        if (!str2.empty()) {
         cout << str2 << " ";
-        count++;
     }
-    return count;
 }
 
 int main(){
     string str="hello world from c++";
-    int n=str.size();
-   cout<<countwords(str);
+    cout<<str.size();
+    stringsplitIntoWord(str);
 }
